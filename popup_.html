@@ -1,0 +1,81 @@
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:image" content="/meta.png">
+<title>The Electronic World Marketing Summit 2022</title>
+
+    <script>
+      
+        function setCookie(name, value, expire) {
+            //var expire_date = new Date(expire)
+            var todayDate = new Date();
+            todayDate.setDate( todayDate.getDate() + expire );
+            document.cookie = name + "=" + escape(value) + "; expires=" + todayDate.toGMTString();
+        }
+    
+        //쿠키 소멸 함수
+        function clearCookie(name) {
+            var today = new Date()
+            //어제 날짜를 쿠키 소멸 날짜로 설정한다.
+            var expire_date = new Date(today.getTime() - 60*60*24*1000)
+            document.cookie = name + "= " + "; expires=" + expire_date.toGMTString()
+        }
+        //체크 상태에 따라 쿠키 생성과 소멸을 제어하는 함수
+        function controlCookie(elemnt) {
+            if (elemnt.checked) {
+                setCookie("PopupCookie","true",1)
+            }
+            else {
+                clearCookie("PopupCookie")
+            }
+            return
+        }
+    </script>
+    
+    <body>
+    
+	<img src="ewms01_v0.4.jpg" alt="" style="width:100%" onclick='window.open("http://www.ewms.kr/")'>
+    <div class="close_area">
+        
+        <label>
+            <input type="checkbox" name="checkbox" value="checkbox" onClick="controlCookie(this)">
+            <span>24시간동안 이창을 열지 않음</span>
+        </label>
+        <a href="javascript:window.close();">창닫기</a></td>
+    </div>
+      <style>
+	img{
+		cursor:pointer;
+	}
+
+        body,html{
+            margin: 0;
+            padding:0;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        label{
+            display: flex;
+        }
+        .close_area{
+            background: #000;
+            color: #fff;
+            font-size: 12px;
+            padding: 8px;
+            position: fixed;
+            display: flex;
+            bottom: 0;
+            width: calc(100% - 16px);
+            justify-content: space-between;
+            align-items: center;
+            left: 0;
+        }
+        .close_area span{
+            margin-right: auto;
+        }
+        .close_area a{
+            color: red;
+        }
+      </style>
+    </body>

@@ -1,0 +1,24 @@
+<HEAD>
+
+    <script language="javascript">
+    function getCookie(name) {
+     
+     var from_idx = document.cookie.indexOf(name+'=');
+     if (from_idx != -1) {
+      from_idx += name.length + 1
+      to_idx = document.cookie.indexOf(';', from_idx)
+    
+      if (to_idx == -1) {
+       to_idx = document.cookie.length
+      }
+      return unescape(document.cookie.substring(from_idx, to_idx))
+     }
+    }
+    
+    var PopupCookie = getCookie("PopupCookie");
+    if (!PopupCookie) {
+       window.open('popup_.html', '1028', 'resizable=no, width=450, height=375, top=0, left=600')
+    }
+    </script>
+    
+    </HEAD>
